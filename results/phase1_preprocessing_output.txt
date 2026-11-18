@@ -1,0 +1,63 @@
+PATHSNAP - PHASE 1: DATA EXPLORATION AND PREPROCESSING
+======================================================================
+Development dataset inventory (recorded in results/inventory.json):
+  train         : 80 trips; 208,417 GPS observations
+  student_test  : 10 trips; 19,160 GPS observations
+  Evaluator partition: NOT accessed
+  Invalid trips in recorded inventory: 0
+  Networks with multiple weak components: 89/90
+  Largest recorded gap: 153,064 seconds
+
+Actual preprocessing run: train/00000001
+  GPS shape: (1315, 3) [longitude, latitude, timestamp]
+  Nodes: 88,809; directed arcs: 165,790
+  PASS: numeric shapes, finite values, coordinate ranges, arc indices
+  PASS: timestamps strictly increasing; original observation order retained
+  No observations dropped or imputed: this trip passes validation
+  Timestamp gaps: min=1s, max=16s
+  Geometry: local metre projection; longitude scale uses cos(mean latitude)
+  Candidate search: exact point-to-segment distance with KD-tree bounds
+  Candidate IDs shape: (1315, 6); features shape: (1315, 6, 20)
+  Candidate rows: 7,890; feature count: 20
+  Nonfinite feature values: 0
+  Feature schema: v2 (20 features; existing model/results remain legacy 8-feature evidence)
+  First candidate: all 20 extracted feature values
+     1. distance_m                     = 0.718881
+     2. relative_distance_m            = 0.000000
+     3. direction_cosine               = 0.999741
+     4. direction_sine_abs             = 0.022766
+     5. log_segment_length             = 5.685506
+     6. fraction                       = 0.109780
+     7. speed_mps                      = 43.679285
+     8. gap_s                          = 1.000000
+     9. displacement_m                 = 43.679285
+    10. acceleration_mps2              = 0.000000
+    11. turn_angle_rad                 = 0.000000
+    12. speed_mean_5_mps               = 43.679285
+    13. speed_std_5_mps                = 0.000000
+    14. distance_from_start_m          = 32.227712
+    15. distance_to_end_m              = 261.339246
+    16. start_in_degree                = 1.000000
+    17. end_out_degree                 = 1.000000
+    18. signed_cross_track_m           = 0.718881
+    19. along_road_displacement_m      = 43.667964
+    20. candidate_distance_gap_m       = 14.321990
+
+First observation: six candidate segments and actual features
+ arc_id   distance_m   heading_cos   fraction   speed_mps   gap_s
+  64973        0.719        0.9997     0.1098      43.679     1.0
+ 117639       15.041       -0.9998     0.5127      43.679     1.0
+   2641       32.236        0.9997     1.0000      43.679     1.0
+  50652       92.476       -0.9790     0.8456      43.679     1.0
+  53932       92.476        0.9790     0.1544      43.679     1.0
+  50585       96.095        0.0199     1.0000      43.679     1.0
+
+Training-only reference handling: 525 chronological route entries
+  The route is NOT an observation-by-observation label file.
+  Proxy target = nearest segment belonging to the reference route.
+  Proxy outside the six candidates: 0.23% of observations
+  Direction ties and repeated visits remain ambiguous; this is not verified GPS ground truth.
+  Reference information is never part of inference features.
+
+Saved: phase1_demo/preprocessed_candidates.csv
+No classifier training, HMM decoding or evaluator processing was performed.

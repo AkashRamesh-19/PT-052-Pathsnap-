@@ -1,0 +1,39 @@
+{
+  "schema_version": 2,
+  "feature_count": 20,
+  "feature_names": [
+    "distance_m",
+    "relative_distance_m",
+    "direction_cosine",
+    "direction_sine_abs",
+    "log_segment_length",
+    "fraction",
+    "speed_mps",
+    "gap_s",
+    "displacement_m",
+    "acceleration_mps2",
+    "turn_angle_rad",
+    "speed_mean_5_mps",
+    "speed_std_5_mps",
+    "distance_from_start_m",
+    "distance_to_end_m",
+    "start_in_degree",
+    "end_out_degree",
+    "signed_cross_track_m",
+    "along_road_displacement_m",
+    "candidate_distance_gap_m"
+  ],
+  "partition": "train",
+  "trip": "00000001",
+  "observations": 1315,
+  "candidates_per_observation": 6,
+  "feature_shape": [
+    1315,
+    6,
+    20
+  ],
+  "candidate_rows": 7890,
+  "nonfinite_values": 0,
+  "trained_model": false,
+  "evaluator_accessed": false
+}

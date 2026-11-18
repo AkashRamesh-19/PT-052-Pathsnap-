@@ -1,5 +1,7 @@
 # PathSnap
 
+**Phase 1 update: 20 features.** The current extractor uses schema v2. See [FEATURES.md](FEATURES.md) for definitions, units and rationale. Run `python -m pathsnap.phase1` with the official training data present. Recorded output is in `results/phase1_preprocessing_output.txt`. Existing model metrics and PDF results below describe the previous eight-feature experiment; retraining is required before claiming twenty-feature model accuracy.
+
 > **Repository rollout: Part 1 only.** This initial contribution contains data loading/validation, EDA inventory, network geometry, candidate generation, feature engineering and their tests. Models/training (Part 2), decoder/maps/report (Part 3), and API/UI (Part 4) are assigned in [TEAM_SPLIT.md](TEAM_SPLIT.md) and will be integrated separately. The full-system commands and measured results below describe the completed local integrated project; they become runnable from this repository after the other contributions merge. Part 1's check is `python -m unittest discover -s tests -p test_data_features.py -v`.
 
 Distributed GPS map matching and route reconstruction for UE24CS352A, PES University.
@@ -104,7 +106,7 @@ Distances use a local equirectangular projection at the mean network latitude: l
 
 The candidate generator finds the six nearest **segments**, not nearest nodes. A midpoint KD-tree gives an initial bound; all midpoints within that bound plus the largest segment half-length are checked by exact point-to-segment projection. This ensures long segments are not missed. If a network has fewer than six arcs, every arc is used. Distinct directed arcs preserve their own IDs even if they overlap geometrically.
 
-Features are perpendicular distance, relative distance, heading cosine, absolute heading sine, log segment length, projected fraction along the segment, observed speed and time gap. Feature rationale: geometric fit, motion agreement and sampling reliability transfer across trip-specific networks, whereas raw arc IDs cannot be learned as global classes. Preprocessing is fit inside each training fold. A positive candidate label means equality with the nearest-reference-segment proxy; if no candidate matches the proxy, all candidates for that observation are negative.
+The twenty current input features are documented in FEATURES.md, covering geometric fit, motion, local speed context and directed connectivity. Feature rationale: geometric fit, motion agreement and sampling reliability transfer across trip-specific networks, whereas raw arc IDs cannot be learned as global classes. Preprocessing is fit inside each training fold. A positive candidate label means equality with the nearest-reference-segment proxy; if no candidate matches the proxy, all candidates for that observation are negative.
 
 ## Models, experimental design and metrics
 
