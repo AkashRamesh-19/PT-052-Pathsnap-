@@ -1,0 +1,65 @@
+[
+  {
+    "features": 8,
+    "cv_fold_accuracy": [
+      0.8430986182548195,
+      0.8646843134495975,
+      0.7847759739273624
+    ],
+    "cv_std": 0.033752062988125824,
+    "seconds": 40.911412000015844,
+    "cv_top1_accuracy": 0.8314289309766336,
+    "cv_top2_accuracy": 0.9121450839105838,
+    "cv_top5_accuracy": 0.9578446140593201,
+    "cv_candidate_miss_rate": 0.024807361792426603,
+    "cv_confident_coverage": 0.7976092878310752,
+    "cv_confident_top1_accuracy": 0.8843974618034067,
+    "cv_macro_precision": 0.7215092871071647,
+    "cv_macro_recall": 0.6894824870401621,
+    "cv_macro_f1": 0.6967704050124234,
+    "cv_log_loss": 1.1864433833397925,
+    "cv_candidate_log_loss": 0.07919730684952811
+  },
+  {
+    "features": 12,
+    "cv_fold_accuracy": [
+      0.8498443264031317,
+      0.872432359792903,
+      0.793974640314657
+    ],
+    "cv_std": 0.03297685185056879,
+    "seconds": 43.706622500001686,
+    "cv_top1_accuracy": 0.8393101396934254,
+    "cv_top2_accuracy": 0.9202066744217807,
+    "cv_top5_accuracy": 0.9582086496209898,
+    "cv_candidate_miss_rate": 0.024807361792426603,
+    "cv_confident_coverage": 0.7976092878310752,
+    "cv_confident_top1_accuracy": 0.8886385619449193,
+    "cv_macro_precision": 0.7402217476179731,
+    "cv_macro_recall": 0.7111632752106012,
+    "cv_macro_f1": 0.7174288119630506,
+    "cv_log_loss": 1.1407221048604697,
+    "cv_candidate_log_loss": 0.07351548713631928
+  },
+  {
+    "features": 20,
+    "cv_fold_accuracy": [
+      0.8478477136292834,
+      0.8696535991036184,
+      0.7864513713539534
+    ],
+    "cv_std": 0.035225650673931116,
+    "seconds": 49.28408059998765,
+    "cv_top1_accuracy": 0.8352533887373891,
+    "cv_top2_accuracy": 0.9170982468570094,
+    "cv_top5_accuracy": 0.9572600997280196,
+    "cv_candidate_miss_rate": 0.024807361792426603,
+    "cv_confident_coverage": 0.7976092878310752,
+    "cv_confident_top1_accuracy": 0.891590956025422,
+    "cv_macro_precision": 0.7252849185957272,
+    "cv_macro_recall": 0.6930255429511089,
+    "cv_macro_f1": 0.7000737850427688,
+    "cv_log_loss": 1.1514168813358991,
+    "cv_candidate_log_loss": 0.07449798873858526
+  }
+]

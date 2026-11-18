@@ -1,0 +1,19 @@
+{
+  "version": 3,
+  "names": [
+    "distance_m",
+    "relative_distance_m",
+    "direction_cosine",
+    "direction_sine_abs",
+    "log_segment_length",
+    "fraction",
+    "speed_mps",
+    "gap_s",
+    "displacement_m",
+    "acceleration_mps2",
+    "turn_angle_rad",
+    "speed_mean_5_mps"
+  ],
+  "hash": "bba85943bea86357ea23baa5225d2e4f346b0b13a954f96acb4cb85468a3a59d",
+  "projection": "WGS84 local azimuthal equidistant; always_xy"
+}
