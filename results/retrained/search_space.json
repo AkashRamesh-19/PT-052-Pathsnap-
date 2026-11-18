@@ -1,0 +1,24 @@
+{
+  "model": "HistGradientBoosting",
+  "space": {
+    "learning_rate": {
+      "scale": "log",
+      "minimum": 0.02,
+      "maximum": 0.3
+    },
+    "max_leaf_nodes": [
+      15,
+      63
+    ],
+    "l2_regularization": [
+      0.0,
+      5.0
+    ],
+    "max_iter": 120,
+    "early_stopping": false
+  },
+  "objective": "three-fold training-trip grouped all-observation Top-1 proxy accuracy",
+  "seed": 352,
+  "trials": 6,
+  "acquisition": "Gaussian-process Matern expected improvement; 512 proposals per acquisition"
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "trial": 0,
+    "parameters": "HistGradientBoostingClassifier(early_stopping=False, l2_regularization=1.0,\n                               learning_rate=0.07999999999999999, max_iter=120,\n                               random_state=352)",
+    "unit_parameters": [
+      0.511916049619631,
+      0.3333333333333333,
+      0.2
+    ],
+    "objective": 0.8393101396934254,
+    "seconds": 43.777917999977944
+  },
+  {
+    "trial": 1,
+    "parameters": "HistGradientBoostingClassifier(early_stopping=False,\n                               l2_regularization=3.8926095533494607,\n                               learning_rate=0.042672331641271884, max_iter=120,\n                               max_leaf_nodes=42, random_state=352)",
+    "unit_parameters": [
+      0.2798391497387497,
+      0.5695829503299413,
+      0.7785219106698922
+    ],
+    "objective": 0.8396090043464183,
+    "seconds": 45.33832939999411
+  },
+  {
+    "trial": 2,
+    "parameters": "HistGradientBoostingClassifier(early_stopping=False,\n                               l2_regularization=1.8890965800896349,\n                               learning_rate=0.11857382893765514, max_iter=120,\n                               max_leaf_nodes=60, random_state=352)",
+    "unit_parameters": [
+      0.6572269307653684,
+      0.9360863475845718,
+      0.37781931601792695
+    ],
+    "objective": 0.8368755318423361,
+    "seconds": 51.41403400001582
+  },
+  {
+    "trial": 3,
+    "parameters": "HistGradientBoostingClassifier(early_stopping=False,\n                               l2_regularization=3.9373751515659143,\n                               learning_rate=0.027084824356701964, max_iter=120,\n                               max_leaf_nodes=38, random_state=352)",
+    "unit_parameters": [
+      0.11197772866968536,
+      0.47164066128654236,
+      0.7874750303131829
+    ],
+    "objective": 0.84005769160866,
+    "seconds": 43.436352899996564
+  },
+  {
+    "trial": 4,
+    "parameters": "HistGradientBoostingClassifier(early_stopping=False,\n                               l2_regularization=4.959462605261326,\n                               learning_rate=0.031556125312966504, max_iter=120,\n                               max_leaf_nodes=29, random_state=352)",
+    "unit_parameters": [
+      0.16839992206015297,
+      0.2842328762747588,
+      0.9918925210522652
+    ],
+    "objective": 0.8407012943681238,
+    "seconds": 40.80714920000173
+  },
+  {
+    "trial": 5,
+    "parameters": "HistGradientBoostingClassifier(early_stopping=False,\n                               l2_regularization=3.997494807219649,\n                               learning_rate=0.2686806234401674, max_iter=120,\n                               max_leaf_nodes=15, random_state=352)",
+    "unit_parameters": [
+      0.9592847009137397,
+      0.0054148119691109775,
+      0.7994989614439298
+    ],
+    "objective": 0.8372423681698032,
+    "seconds": 37.20356699998956
+  }
+]
