@@ -1,0 +1,51 @@
+{
+  "label_warning": "Inferred ordered-route proxies, not verified observation ground truth",
+  "used_for_tuning": false,
+  "trips": [
+    {
+      "trip": "00000077",
+      "observations": 3911,
+      "classifier_accuracy": 0.6972641268217847,
+      "hmm_accuracy": 0.7463564305804142,
+      "alignment_confident_coverage": 0.8079774993607773,
+      "candidate_miss_rate": 0.0,
+      "fraction_of_classifier_errors_on_uncertain_labels": 0.2635135135135135,
+      "median_distance_to_aligned_reference_m": 6.155869838457477,
+      "p95_distance_to_aligned_reference_m": 18.8879577379927,
+      "hmm_corrected_observations": 432,
+      "hmm_worsened_observations": 240,
+      "alignment_resets": 0,
+      "decoder_resets": 0
+    },
+    {
+      "trip": "00000065",
+      "observations": 768,
+      "classifier_accuracy": 0.8580729166666666,
+      "hmm_accuracy": 0.91796875,
+      "alignment_confident_coverage": 0.7708333333333334,
+      "candidate_miss_rate": 0.0,
+      "fraction_of_classifier_errors_on_uncertain_labels": 0.6697247706422018,
+      "median_distance_to_aligned_reference_m": 4.404818831017739,
+      "p95_distance_to_aligned_reference_m": 11.909211382908675,
+      "hmm_corrected_observations": 51,
+      "hmm_worsened_observations": 5,
+      "alignment_resets": 1,
+      "decoder_resets": 2
+    },
+    {
+      "trip": "00000056",
+      "observations": 3958,
+      "classifier_accuracy": 0.8784739767559373,
+      "hmm_accuracy": 0.9292572006063669,
+      "alignment_confident_coverage": 0.7589691763516928,
+      "candidate_miss_rate": 0.0025265285497726125,
+      "fraction_of_classifier_errors_on_uncertain_labels": 0.5135135135135135,
+      "median_distance_to_aligned_reference_m": 4.803329826490513,
+      "p95_distance_to_aligned_reference_m": 14.526491445442034,
+      "hmm_corrected_observations": 250,
+      "hmm_worsened_observations": 49,
+      "alignment_resets": 0,
+      "decoder_resets": 2
+    }
+  ]
+}
