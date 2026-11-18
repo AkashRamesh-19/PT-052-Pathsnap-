@@ -1,0 +1,642 @@
+[
+  {
+    "trip": "00000001",
+    "observations": 1315,
+    "confident_coverage": 0.8806083650190114,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000002",
+    "observations": 7243,
+    "confident_coverage": 0.667126881126605,
+    "alignment_resets": 6,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 1
+  },
+  {
+    "trip": "00000003",
+    "observations": 821,
+    "confident_coverage": 0.8903775883069428,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000004",
+    "observations": 1064,
+    "confident_coverage": 0.8430451127819549,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000005",
+    "observations": 1045,
+    "confident_coverage": 0.970334928229665,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000006",
+    "observations": 1450,
+    "confident_coverage": 0.7731034482758621,
+    "alignment_resets": 3,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000008",
+    "observations": 3093,
+    "confident_coverage": 0.8541868735855157,
+    "alignment_resets": 0,
+    "repeated_route_entries": 1,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000010",
+    "observations": 2711,
+    "confident_coverage": 0.8697897454813722,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000011",
+    "observations": 2828,
+    "confident_coverage": 0.9066478076379066,
+    "alignment_resets": 1,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000012",
+    "observations": 1608,
+    "confident_coverage": 0.9639303482587065,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000013",
+    "observations": 2580,
+    "confident_coverage": 0.8930232558139535,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000014",
+    "observations": 448,
+    "confident_coverage": 0.7075892857142857,
+    "alignment_resets": 1,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000016",
+    "observations": 1305,
+    "confident_coverage": 0.7632183908045977,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000018",
+    "observations": 379,
+    "confident_coverage": 0.6886543535620053,
+    "alignment_resets": 0,
+    "repeated_route_entries": 9,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000019",
+    "observations": 2354,
+    "confident_coverage": 0.8283772302463891,
+    "alignment_resets": 3,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 3
+  },
+  {
+    "trip": "00000020",
+    "observations": 2353,
+    "confident_coverage": 0.9422014449638759,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000021",
+    "observations": 15783,
+    "confident_coverage": 0.9427231831717671,
+    "alignment_resets": 2,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000022",
+    "observations": 474,
+    "confident_coverage": 0.6708860759493671,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000024",
+    "observations": 801,
+    "confident_coverage": 0.8913857677902621,
+    "alignment_resets": 2,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000025",
+    "observations": 1179,
+    "confident_coverage": 0.8837998303647159,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000026",
+    "observations": 361,
+    "confident_coverage": 0.5678670360110804,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000027",
+    "observations": 694,
+    "confident_coverage": 0.8155619596541787,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000028",
+    "observations": 3565,
+    "confident_coverage": 0.9051893408134642,
+    "alignment_resets": 4,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000029",
+    "observations": 733,
+    "confident_coverage": 0.8240109140518418,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000031",
+    "observations": 4245,
+    "confident_coverage": 0.9227326266195525,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000032",
+    "observations": 2464,
+    "confident_coverage": 0.8993506493506493,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000033",
+    "observations": 5844,
+    "confident_coverage": 0.3470225872689938,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 1
+  },
+  {
+    "trip": "00000034",
+    "observations": 3614,
+    "confident_coverage": 0.8718871057000553,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000035",
+    "observations": 1643,
+    "confident_coverage": 0.7048082775410834,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000036",
+    "observations": 1368,
+    "confident_coverage": 0.8596491228070176,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000037",
+    "observations": 677,
+    "confident_coverage": 0.7754800590841949,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000038",
+    "observations": 1287,
+    "confident_coverage": 0.8313908313908314,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000039",
+    "observations": 363,
+    "confident_coverage": 0.7603305785123967,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000041",
+    "observations": 1019,
+    "confident_coverage": 0.7114818449460255,
+    "alignment_resets": 2,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 1
+  },
+  {
+    "trip": "00000042",
+    "observations": 7739,
+    "confident_coverage": 0.8079855278459749,
+    "alignment_resets": 18,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 1
+  },
+  {
+    "trip": "00000043",
+    "observations": 2322,
+    "confident_coverage": 0.867786391042205,
+    "alignment_resets": 2,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000044",
+    "observations": 546,
+    "confident_coverage": 0.8113553113553114,
+    "alignment_resets": 1,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000045",
+    "observations": 640,
+    "confident_coverage": 0.909375,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000046",
+    "observations": 1401,
+    "confident_coverage": 0.9064953604568166,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000047",
+    "observations": 1272,
+    "confident_coverage": 0.8710691823899371,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000048",
+    "observations": 1240,
+    "confident_coverage": 0.8258064516129032,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000050",
+    "observations": 518,
+    "confident_coverage": 0.8127413127413128,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000051",
+    "observations": 984,
+    "confident_coverage": 0.7855691056910569,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000053",
+    "observations": 1304,
+    "confident_coverage": 0.7584355828220859,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000054",
+    "observations": 19313,
+    "confident_coverage": 0.1067156837363434,
+    "alignment_resets": 2,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000055",
+    "observations": 2472,
+    "confident_coverage": 0.9522653721682848,
+    "alignment_resets": 1,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000057",
+    "observations": 1645,
+    "confident_coverage": 0.8626139817629179,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000058",
+    "observations": 599,
+    "confident_coverage": 0.5826377295492488,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000060",
+    "observations": 854,
+    "confident_coverage": 0.629976580796253,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000061",
+    "observations": 1430,
+    "confident_coverage": 0.6559440559440559,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000062",
+    "observations": 3378,
+    "confident_coverage": 0.8469508584961516,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000063",
+    "observations": 2781,
+    "confident_coverage": 0.7889248471772744,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000064",
+    "observations": 2093,
+    "confident_coverage": 0.8308647873865265,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000066",
+    "observations": 4325,
+    "confident_coverage": 0.8529479768786127,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000068",
+    "observations": 747,
+    "confident_coverage": 0.7322623828647925,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000069",
+    "observations": 2067,
+    "confident_coverage": 0.8137397194000967,
+    "alignment_resets": 2,
+    "repeated_route_entries": 29,
+    "disconnected_reference_steps": 1
+  },
+  {
+    "trip": "00000070",
+    "observations": 2076,
+    "confident_coverage": 0.8174373795761078,
+    "alignment_resets": 1,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000071",
+    "observations": 850,
+    "confident_coverage": 0.8564705882352941,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000072",
+    "observations": 969,
+    "confident_coverage": 0.8926728586171311,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000074",
+    "observations": 1929,
+    "confident_coverage": 0.8755832037325039,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000075",
+    "observations": 1628,
+    "confident_coverage": 0.7493857493857494,
+    "alignment_resets": 2,
+    "repeated_route_entries": 2,
+    "disconnected_reference_steps": 2
+  },
+  {
+    "trip": "00000078",
+    "observations": 2909,
+    "confident_coverage": 0.7332416638019938,
+    "alignment_resets": 1,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000079",
+    "observations": 689,
+    "confident_coverage": 0.783744557329463,
+    "alignment_resets": 1,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000080",
+    "observations": 2510,
+    "confident_coverage": 0.851792828685259,
+    "alignment_resets": 1,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 1
+  },
+  {
+    "trip": "00000081",
+    "observations": 3224,
+    "confident_coverage": 0.6017369727047146,
+    "alignment_resets": 16,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000082",
+    "observations": 4268,
+    "confident_coverage": 0.9552483598875351,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000083",
+    "observations": 1507,
+    "confident_coverage": 0.8526874585268746,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000084",
+    "observations": 16031,
+    "confident_coverage": 0.8443640446634645,
+    "alignment_resets": 4,
+    "repeated_route_entries": 2,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000085",
+    "observations": 1092,
+    "confident_coverage": 0.8058608058608059,
+    "alignment_resets": 1,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000086",
+    "observations": 4143,
+    "confident_coverage": 0.9220371711320299,
+    "alignment_resets": 0,
+    "repeated_route_entries": 2,
+    "disconnected_reference_steps": 1
+  },
+  {
+    "trip": "00000088",
+    "observations": 876,
+    "confident_coverage": 0.7408675799086758,
+    "alignment_resets": 2,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000089",
+    "observations": 1228,
+    "confident_coverage": 0.7084690553745928,
+    "alignment_resets": 5,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 1
+  },
+  {
+    "trip": "00000090",
+    "observations": 536,
+    "confident_coverage": 0.7444029850746269,
+    "alignment_resets": 1,
+    "repeated_route_entries": 1,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000092",
+    "observations": 7892,
+    "confident_coverage": 0.7473390775468829,
+    "alignment_resets": 0,
+    "repeated_route_entries": 14,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000093",
+    "observations": 1211,
+    "confident_coverage": 0.7605284888521883,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000095",
+    "observations": 1551,
+    "confident_coverage": 0.7098646034816247,
+    "alignment_resets": 0,
+    "repeated_route_entries": 7,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000096",
+    "observations": 3271,
+    "confident_coverage": 0.7450321002751452,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000097",
+    "observations": 1740,
+    "confident_coverage": 0.8793103448275862,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000098",
+    "observations": 5584,
+    "confident_coverage": 0.8979226361031518,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  },
+  {
+    "trip": "00000099",
+    "observations": 2322,
+    "confident_coverage": 0.6925064599483204,
+    "alignment_resets": 0,
+    "repeated_route_entries": 0,
+    "disconnected_reference_steps": 0
+  }
+]

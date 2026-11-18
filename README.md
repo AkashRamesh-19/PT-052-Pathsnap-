@@ -1,14 +1,14 @@
 # PathSnap
 
-**Phase 1 update: 20 features.** The current extractor uses schema v2. See [FEATURES.md](FEATURES.md) for definitions, units and rationale. Run `python -m pathsnap.phase1` with the official training data present. Recorded output is in `results/phase1_preprocessing_output.txt`. Existing model metrics and PDF results below describe the previous eight-feature experiment; retraining is required before claiming twenty-feature model accuracy.
+> **Repository rollout: updated Part 1 only.** This commit contains schema-v3 data validation, WGS84 geometry, 20-feature extraction and ordered reference alignment, with nine standalone tests. The trained 12-feature model, HMM, API/UI and full-project verification are in the other teammates' assigned contributions and are not yet in this repository. Results below describe the verified local integrated project; full-system commands require Parts 2–4 to merge. Supply official data separately. Earlier preprocessing evidence is archived under `results/legacy_part1_v2/` and is not current schema-v3 output.
 
-> **Repository rollout: Part 1 only.** This initial contribution contains data loading/validation, EDA inventory, network geometry, candidate generation, feature engineering and their tests. Models/training (Part 2), decoder/maps/report (Part 3), and API/UI (Part 4) are assigned in [TEAM_SPLIT.md](TEAM_SPLIT.md) and will be integrated separately. The full-system commands and measured results below describe the completed local integrated project; they become runnable from this repository after the other contributions merge. Part 1's check is `python -m unittest discover -s tests -p test_data_features.py -v`.
+**Current verified pipeline:** schema v3 validates all 20 features and selects 12 using training-trip GroupKFold. The refitted model is in `artifacts/`; current results are in `results/retrained/`. Student-test ordered-alignment proxy accuracy is **87.20% classifier / 90.60% HMM as equal-weight means per trip**, and **85.59% / 88.89% pooled across GPS observations**. Only the mean per-trip HMM metric exceeds 90%. Retrain with `python -m pathsnap.train --samples-per-trip 256 --trials 6`. The earlier methodology, tables and PDF below describe historical experiments and are superseded by the current source/configuration and JSON results. No evaluator data or physical two-laptop verification was available.
 
 Distributed GPS map matching and route reconstruction for UE24CS352A, PES University.
 
 This repository implements data validation and exploration, candidate feature engineering, five supervised classifiers, trip-grouped cross-validation, Gaussian-process Bayesian optimisation, directed-network Viterbi decoding, a FastAPI service, a browser UI, Folium maps, and a generated technical report. The original consolidated hackathon requirements are preserved in [README (4).md](README%20(4).md).
 
-**Important evidence boundary:** `.route` files contain a route sequence, not one label per GPS point. Training and pointwise scoring use the geometrically nearest segment within the reference route as a **proxy label**. Reported proxy accuracy is not independently verified pointwise ground-truth accuracy. Opposite directed arcs, intersections, repeated traversals and reference-route inaccuracies can make labels ambiguous. Reference files never enter inference features or the decoder.
+**Important evidence boundary:** `.route` files contain a route sequence, not one label per GPS point. Current training and scoring use **sequence-aware alignment over ordered reference occurrences**, with ambiguity flags. These remain inferred proxy labels, not independently verified pointwise ground truth. Reference routes never enter prediction features or the inference decoder; optional student scoring opens references only after predictions finish, and evaluator inference never opens them.
 
 ## Quick start
 
@@ -106,7 +106,7 @@ Distances use a local equirectangular projection at the mean network latitude: l
 
 The candidate generator finds the six nearest **segments**, not nearest nodes. A midpoint KD-tree gives an initial bound; all midpoints within that bound plus the largest segment half-length are checked by exact point-to-segment projection. This ensures long segments are not missed. If a network has fewer than six arcs, every arc is used. Distinct directed arcs preserve their own IDs even if they overlap geometrically.
 
-The twenty current input features are documented in FEATURES.md, covering geometric fit, motion, local speed context and directed connectivity. Feature rationale: geometric fit, motion agreement and sampling reliability transfer across trip-specific networks, whereas raw arc IDs cannot be learned as global classes. Preprocessing is fit inside each training fold. A positive candidate label means equality with the nearest-reference-segment proxy; if no candidate matches the proxy, all candidates for that observation are negative.
+The twenty input features and their units are listed in FEATURES.md; they cover geometric fit, directed alignment, motion, rolling speed context and road connectivity. Feature rationale: geometric fit, motion agreement and sampling reliability transfer across trip-specific networks, whereas raw arc IDs cannot be learned as global classes. Preprocessing is fit inside each training fold. A positive candidate label means equality with the nearest-reference-segment proxy; if no candidate matches the proxy, all candidates for that observation are negative.
 
 ## Models, experimental design and metrics
 
@@ -194,7 +194,7 @@ Do not claim full final-submission readiness until these items are completed. Do
 
 
 <!-- measured-results:start -->
-## Measured local results
+## Historical eight-feature results (superseded)
 
 Actual development run: 80 training trips, 10 student-test trips, up to 160 training observations per trip, three-fold trip-grouped CV and 8 Bayesian trials. All accuracy values below use the documented geometric proxy labels. Values are means across student trips.
 

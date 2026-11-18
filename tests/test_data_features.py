@@ -45,7 +45,8 @@ class DataFeatureTests(unittest.TestCase):
         for t in range(3):
             forward = 0 if t < 2 else 1
             j = np.flatnonzero(ids[t] == forward)[0]
-            self.assertAlmostEqual(features[t, j, 0], 0., places=6)
+            # AEQD projects an ellipsoidal constant-latitude curve to a line approximation.
+            self.assertLess(features[t, j, 0], .001)
             self.assertAlmostEqual(features[t, j, 2], 1., places=6)
 
     def test_motion_context_and_endpoint_geometry(self):

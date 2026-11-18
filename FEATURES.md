@@ -1,4 +1,4 @@
-# Phase 1: twenty input features (schema v2)
+# Phase 1: twenty input features (schema v3)
 
 Each GPS observation has up to six candidate directed road segments. Every candidate gets these **20 numeric features**. Observation index, timestamp and arc ID identify rows and are not counted as extra features. No reference-route labels or learned transformations are used to extract them.
 
@@ -33,6 +33,6 @@ Several features are related by geometry. Their inclusion provides interpretable
 
 Run `python -m pathsnap.phase1` from the project root with the official training data present. The terminal prints all 20 feature values for a real candidate and saves `phase1_demo/preprocessed_candidates.csv` with 22 columns: 2 row identifiers + 20 inputs. This demo never trains a model or accesses evaluator data.
 
-The existing saved model, comparison metrics and PDF report describe the **previous eight-feature experiment**. They are not results for the twenty-feature schema. New training uses schema-v2 cache filenames to avoid loading eight-column cached data. The local API explicitly selects the saved model's feature names, allowing the old eight-feature model to keep working until retraining. Legacy `segment_length_m` was already log-transformed; it is supported as an alias for the accurate new name `log_segment_length`.
+The current model uses 12 features selected from the validated 20 using training-trip grouped validation. Geometry uses a WGS84 local azimuthal-equidistant projection; heading uses up to three previous steps to suppress jitter. `artifacts/feature_schema.json` records the selected names and hash, which the API validates against the saved model. Current results are in `results/retrained/`; the older root-level comparison and PDF remain historical eight-feature evidence. Schema-v3 caches prevent reuse of old preprocessing. Legacy `segment_length_m` is an extraction alias for `log_segment_length`, but the API rejects old model schemas.
 
 To train and measure the new schema, run the full experiment command after all teammates' modules are integrated. Do not reuse old accuracy figures as evidence of a twenty-feature model.

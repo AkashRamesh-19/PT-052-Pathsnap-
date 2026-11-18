@@ -1,6 +1,6 @@
 import numpy as np
 
-FEATURE_SCHEMA_VERSION = 2
+FEATURE_SCHEMA_VERSION = 3
 LEGACY_FEATURE_NAMES = ['distance_m', 'relative_distance_m', 'direction_cosine', 'direction_sine_abs', 'segment_length_m', 'fraction', 'speed_mps', 'gap_s']
 FEATURE_NAMES = [
     'distance_m', 'relative_distance_m', 'direction_cosine', 'direction_sine_abs',
@@ -16,16 +16,25 @@ def prepare(trip, network, k=6, feature_names=None):
 
     feature_names explicitly selects a saved model's schema. The legacy name
     segment_length_m is an alias for log_segment_length, preserving old models.
-    At observation zero, motion is estimated from the first two GPS points;
-    subsequent motion uses backward differences. Acceleration/turn start at zero.
+    At observation zero, motion uses the first interval's true duration; speed
+    subsequently uses backward differences. Heading uses up to three preceding
+    steps to suppress GPS jitter. Acceleration/turn start at zero and reset at gaps.
     """
     ids, distance, fraction = network.candidates(trip.track, k)
     xy = network.project(trip.track[:, :2])
     motion = np.diff(xy, axis=0, prepend=xy[:1])
     motion[0] = motion[1]
     gap = np.diff(trip.track[:, 2], prepend=trip.track[0, 2]-1)
+    gap[0] = gap[1]
     mag = np.linalg.norm(motion, axis=1)
-    unit = motion / np.maximum(mag[:, None], 1e-9)
+    heading = xy-xy[np.maximum(np.arange(len(xy))-3,0)]
+    heading[0] = motion[0]
+    # Do not carry a heading across long discontinuities.
+    recent_reset=0
+    for i in range(1,len(xy)):
+        if gap[i] > 60: recent_reset=i
+        if i-recent_reset < 3: heading[i]=xy[i]-xy[max(recent_reset,i-3)]
+    unit = heading / np.maximum(np.linalg.norm(heading,axis=1)[:,None], 1e-9)
     direction = network.vec[ids] / np.maximum(network.length[ids, None], 1e-9)
     cosine = np.sum(unit[:, None] * direction, axis=2)
     sine = np.abs(unit[:, None, 0] * direction[:, :, 1] - unit[:, None, 1] * direction[:, :, 0])
@@ -59,7 +68,7 @@ def prepare(trip, network, k=6, feature_names=None):
         broadcast(rolling_mean), broadcast(rolling_std),
         fraction*network.length[ids], (1-fraction)*network.length[ids],
         in_degree[trip.arcs[ids, 0]], out_degree[trip.arcs[ids, 1]],
-        cross_track, cosine*mag[:, None], broadcast(candidate_gap),
+        cross_track, np.sum(motion[:,None,:]*direction,axis=-1), broadcast(candidate_gap),
     ], axis=-1)
     if feature_names is not None:
         aliases = {'segment_length_m': 'log_segment_length'}
@@ -70,9 +79,8 @@ def prepare(trip, network, k=6, feature_names=None):
     return ids, fraction, x
 
 def proxy_labels(trip, network, reference):
-    # Route files are sequences, not observation labels. This geometric proxy
-    # cannot resolve repeated traversals or direction ties; report that explicitly.
-    return network.candidates(trip.track, k=1, subset=reference)[0][:, 0]
+    from .alignment import align_reference
+    return align_reference(trip, network, reference).labels
 
 def probabilities(model, x):
     p = model.predict_proba(x.reshape(-1, x.shape[-1]))[:, list(model.classes_).index(1)]

@@ -5,6 +5,7 @@ import numpy as np
 from scipy.spatial import cKDTree
 from scipy.sparse import csr_matrix
 from scipy.sparse.csgraph import connected_components
+from pyproj import CRS, Transformer
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -22,9 +23,12 @@ def read_trip(folder):
         files = list(folder.glob('*.' + ext))
         if len(files) != 1:
             raise ValueError(f'{folder}: expected exactly one .{ext} file')
-        a = np.loadtxt(files[0], dtype=dtype, ndmin=2)
-        if a.shape[1] != columns or not np.isfinite(a).all():
+        a = np.loadtxt(files[0], dtype=float, ndmin=2)
+        if not len(a) or a.shape[1] != columns or not np.isfinite(a).all():
             raise ValueError(f'{files[0]}: invalid shape or nonfinite values')
+        if dtype is int:
+            if not np.equal(a, np.floor(a)).all(): raise ValueError('Noninteger road indices')
+            a = a.astype(np.int64)
         return a
     track, nodes, arcs = load('track', 3), load('nodes', 2), load('arcs', 2, int)
     for a in (track[:, :2], nodes):
@@ -40,7 +44,10 @@ def read_reference(folder, arc_count):
     files = list(Path(folder).glob('*.route'))
     if len(files) != 1:
         raise ValueError(f'{folder}: expected one reference route')
-    route = np.loadtxt(files[0], dtype=int, ndmin=1)
+    raw = np.loadtxt(files[0], dtype=float, ndmin=2)
+    if not len(raw) or raw.shape[1] != 1 or not np.isfinite(raw).all() or not np.equal(raw,np.floor(raw)).all():
+        raise ValueError('Reference must contain one integer arc ID per row')
+    route = raw[:,0].astype(np.int64)
     if not len(route) or route.min() < 0 or route.max() >= arc_count:
         raise ValueError('Invalid reference arc indices')
     return route
@@ -50,6 +57,8 @@ class Network:
         self.nodes, self.arcs = trip.nodes, trip.arcs
         self.origin = self.nodes.mean(axis=0)
         self.scale = np.array([111320 * np.cos(np.deg2rad(self.origin[1])), 111320.])
+        crs = CRS.from_proj4(f'+proj=aeqd +lat_0={self.origin[1]} +lon_0={self.origin[0]} +datum=WGS84 +units=m')
+        self.transformer = Transformer.from_crs('EPSG:4326',crs,always_xy=True)
         xy = self.project(self.nodes)
         self.a, self.b = xy[self.arcs[:, 0]], xy[self.arcs[:, 1]]
         self.vec = self.b - self.a
@@ -62,7 +71,9 @@ class Network:
             self.adj[u].append((int(v), float(w)))
 
     def project(self, lonlat):
-        return (lonlat - self.origin) * self.scale
+        a=np.asarray(lonlat)
+        x,y=self.transformer.transform(a[...,0],a[...,1])
+        return np.stack([x,y],axis=-1)
 
     def distances(self, p, ids):
         v, a = self.vec[ids], self.a[ids]
@@ -72,6 +83,7 @@ class Network:
 
     def candidates(self, track, k=6, subset=None):
         """Exact segment nearest neighbours using midpoint bounding spheres."""
+        if k < 1: raise ValueError('Candidate count must be positive')
         points = self.project(track[:, :2])
         allowed = np.arange(len(self.arcs)) if subset is None else np.unique(subset)
         k = min(k, len(allowed))

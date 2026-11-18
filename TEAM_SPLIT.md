@@ -1,18 +1,20 @@
 # PathSnap: four-person work allocation
 
+**Current handoff:** use `team_packages/CURRENT_VERIFIED_2026-11-18/`. Earlier ZIPs and `team_handoff/` snapshots are historical. Current artifacts use schema v3 and 12 selected inputs from 20 validated features. Exact non-overlapping ownership is recorded in each current ZIP's `FILE_HASHES.json` and `HOW_TO_PUSH.md`.
+
 This allocation assumes four contributors total. Names can be assigned to these roles without changing file ownership. The project was implemented locally with Codex assistance; splitting responsibility does not imply that four people independently authored the existing code. Each contributor must review, understand, test and explain their assigned part and disclose AI assistance as required.
 
 | Contributor | Responsibility | Owned files | Evidence / acceptance check |
 |---|---|---|---|
-| 1 — proposed user role | Raw data validation, EDA inventory, geographical projection, candidate generation, features and proxy targets | `pathsnap/__init__.py`, `pathsnap/data.py`, `pathsnap/features.py`, data-specific tests; initial dependencies and ignore rules | Exact nearest candidates agree with brute force; invalid timestamps rejected; inference loader does not read labels; explain geometric proxy limitations |
-| 2 | Five-model experiments, grouped validation, Bayesian tuning and model export | `pathsnap/experiment.py`, `artifacts/`, `results/comparison*`, `results/bayesian_trials.json`, per-model results, training-specific tests | Five measured models; whole-trip CV; recorded Bayesian trials; reproducible trusted model artifact; no evaluator access |
-| 3 | Directed HMM/Viterbi, decoder calibration, metrics review, Folium maps and consolidated report | `pathsnap/decoder.py`, `pathsnap/calibrate.py`, `pathsnap/maps.py`, `pathsnap/report.py`, `reports/`, decoder/map/report result files and tests | Directed-path and reset tests; classifier-vs-HMM tradeoff; real-data maps; honest report and missing-evidence list |
-| 4 | Backend, browser UI, two-laptop integration and end-to-end verification | `pathsnap/api.py`, `pathsnap/verify.py`, `ui/`, API tests, `results/api_verification_student_test.json` | All ten student trips over HTTP; no reference labels/geometry exposed; server logs; LAN demo and real screenshots |
+| 1 — your part | Raw validation, WGS84 geometry, EDA, candidates, features and ordered alignment | `data.py`, `features.py`, `alignment.py`, `phase1.py`, `baseline.py`, package initializer; data/alignment tests; dependencies, shared docs and ignore rules | Validated 20-feature extractor; ordered inferred labels with uncertainty; reference-free feature extraction |
+| 2 | Five models, grouped selection, Bayesian tuning and final export | `train.py`, compatibility `experiment.py`, the three current root-level artifact files, current model/ablation/candidate result records, comparison plots and training-policy tests | Five measured models; training-only trip groups; six replayed Bayesian trials; final 12-feature model |
+| 3 | HMM/Viterbi, path reconstruction, calibration and map generation | `decoder.py`, `reconstruct.py`, `calibrate.py`, `maps.py`, `diagnose.py`, legacy guarded `report.py`, decoder/map results and reconstruction tests | Directed paths and gaps; 16 training-only decoder settings; genuine reconstructed routes; historical PDF excluded |
+| 4 | API, UI and complete verification | `api.py`, `verify.py`, `audit.py`, `audit_http.py`, `ui/`, browser/API/integration tests, current verification report, prediction records, screenshots and package utility | Ten student HTTP requests; two real Chrome trips; no hidden reference inputs; mobile/error/bounds checks |
 
 ## Shared-file rules
 
 - Contributor 1 adds the initial `requirements.txt`, `.gitignore`, `README.md` and this allocation. Later contributors extend the README and dependency list in small reviewed changes.
-- Split the existing mixed `tests/test_pipeline.py` by responsibility when integrating; do not have multiple contributors overwrite the same test file.
+- `tests/test_pipeline.py` belongs to contributor 4 as a shared integration suite. Other contributors own the separate test files listed in their ZIP manifests; do not overwrite one another's tests.
 - Contributor 2 owns the experiment orchestrator. Contributor 3 coordinates changes where it invokes decoder calibration, map generation and reports.
 - Each contributor owns their generated result paths. Run training/calibration sequentially to prevent concurrent artifact writers.
 - Keep official raw data, caches, virtual environments and logs out of Git. Do not publish evaluator data. Retain reproducible aggregate JSON/CSV experiment records.

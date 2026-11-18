@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 import folium
 from .data import ROOT, read_trip, read_reference, Network
-from .features import FEATURE_NAMES, prepare, proxy_labels
+from .features import FEATURE_NAMES, FEATURE_SCHEMA_VERSION, prepare, proxy_labels
 
 
 def main():
@@ -44,7 +44,7 @@ def main():
     emit(f'  Candidate IDs shape: {ids.shape}; features shape: {features.shape}')
     emit(f'  Candidate rows: {ids.size:,}; feature count: {len(FEATURE_NAMES)}')
     emit(f'  Nonfinite feature values: {int((~np.isfinite(features)).sum())}')
-    emit('  Feature schema: v2 (20 features; existing model/results remain legacy 8-feature evidence)')
+    emit(f'  Feature schema: v{FEATURE_SCHEMA_VERSION} (20 extracted inputs; the trained model uses its saved subset)')
     emit('  First candidate: all 20 extracted feature values')
     for number, (name, value) in enumerate(zip(FEATURE_NAMES, features[0, 0]), 1):
         emit(f'    {number:2d}. {name:30s} = {value:.6f}')
@@ -58,7 +58,7 @@ def main():
     emit()
     emit(f'Training-only reference handling: {len(reference)} chronological route entries')
     emit('  The route is NOT an observation-by-observation label file.')
-    emit('  Proxy target = nearest segment belonging to the reference route.')
+    emit('  Proxy targets use ordered-reference sequence alignment; they remain inferred labels.')
     emit(f'  Proxy outside the six candidates: {np.mean(~(ids==target[:,None]).any(axis=1)):.2%} of observations')
     emit('  Direction ties and repeated visits remain ambiguous; this is not verified GPS ground truth.')
     emit('  Reference information is never part of inference features.')
@@ -69,7 +69,7 @@ def main():
     emit('No classifier training, HMM decoding or evaluator processing was performed.')
     (out/'preprocessing_output.txt').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     (ROOT/'results/phase1_preprocessing_output.txt').write_text('\n'.join(lines)+'\n',encoding='utf-8')
-    summary = dict(schema_version=2, feature_count=len(FEATURE_NAMES), feature_names=FEATURE_NAMES,
+    summary = dict(schema_version=FEATURE_SCHEMA_VERSION, feature_count=len(FEATURE_NAMES), feature_names=FEATURE_NAMES,
                    partition='train', trip=trip.id, observations=len(ids), candidates_per_observation=ids.shape[1],
                    feature_shape=list(features.shape), candidate_rows=int(ids.size),
                    nonfinite_values=int((~np.isfinite(features)).sum()),
