@@ -1,0 +1,10 @@
+{
+  "status": "Completed trip 00000000.\n2 sequence resets across gaps or invalid transitions.",
+  "observations": "2,503",
+  "leaflet_paths": 464,
+  "mobile_no_horizontal_overflow": true,
+  "ui": "http://127.0.0.1:8080",
+  "api": "http://127.0.0.1:8000",
+  "real_browser": true,
+  "mocked_api": false
+}

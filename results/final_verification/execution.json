@@ -1,0 +1,9 @@
+{
+  "unit_tests_returncode": 0,
+  "commands": [
+    "python -m pathsnap.audit",
+    "python -m unittest discover -s tests -v"
+  ],
+  "training_executed": false,
+  "model_unchanged": true
+}

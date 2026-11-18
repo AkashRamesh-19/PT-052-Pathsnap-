@@ -1,0 +1,917 @@
+{
+  "features": [
+    "distance_m",
+    "relative_distance_m",
+    "direction_cosine",
+    "direction_sine_abs",
+    "log_segment_length",
+    "fraction",
+    "speed_mps",
+    "gap_s",
+    "displacement_m",
+    "acceleration_mps2",
+    "turn_angle_rad",
+    "speed_mean_5_mps"
+  ],
+  "features_used_in_splits": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "trained_models": [
+    "LogisticRegression",
+    "GaussianNB",
+    "DecisionTree",
+    "RandomForest",
+    "HistGradientBoosting"
+  ],
+  "bayesian": {
+    "status": "PASS",
+    "trials": 6,
+    "gp_expected_improvement_proposals": 3,
+    "selected_trial": 4,
+    "best_cv_top1": 0.8407012943681238,
+    "parameters_replay_matches": true
+  },
+  "decoder_trials": 16,
+  "decoder_training_trips": [
+    {
+      "trip": "00000026",
+      "observations": 361,
+      "alignment_confident_coverage": 0.5678670360110804
+    },
+    {
+      "trip": "00000058",
+      "observations": 599,
+      "alignment_confident_coverage": 0.5826377295492488
+    },
+    {
+      "trip": "00000071",
+      "observations": 850,
+      "alignment_confident_coverage": 0.8564705882352941
+    },
+    {
+      "trip": "00000025",
+      "observations": 1179,
+      "alignment_confident_coverage": 0.8837998303647159
+    },
+    {
+      "trip": "00000036",
+      "observations": 1368,
+      "alignment_confident_coverage": 0.8596491228070176
+    },
+    {
+      "trip": "00000057",
+      "observations": 1645,
+      "alignment_confident_coverage": 0.8626139817629179
+    },
+    {
+      "trip": "00000019",
+      "observations": 2354,
+      "alignment_confident_coverage": 0.8283772302463891
+    },
+    {
+      "trip": "00000008",
+      "observations": 3093,
+      "alignment_confident_coverage": 0.8541868735855157
+    },
+    {
+      "trip": "00000066",
+      "observations": 4325,
+      "alignment_confident_coverage": 0.8529479768786127
+    }
+  ],
+  "folds": [
+    {
+      "fit": [
+        "00000001",
+        "00000003",
+        "00000004",
+        "00000006",
+        "00000008",
+        "00000011",
+        "00000012",
+        "00000014",
+        "00000016",
+        "00000019",
+        "00000020",
+        "00000022",
+        "00000024",
+        "00000026",
+        "00000027",
+        "00000029",
+        "00000031",
+        "00000033",
+        "00000034",
+        "00000036",
+        "00000037",
+        "00000039",
+        "00000041",
+        "00000043",
+        "00000044",
+        "00000046",
+        "00000047",
+        "00000050",
+        "00000051",
+        "00000054",
+        "00000055",
+        "00000058",
+        "00000060",
+        "00000062",
+        "00000063",
+        "00000066",
+        "00000068",
+        "00000070",
+        "00000071",
+        "00000074",
+        "00000075",
+        "00000079",
+        "00000080",
+        "00000082",
+        "00000083",
+        "00000085",
+        "00000086",
+        "00000089",
+        "00000090",
+        "00000093",
+        "00000095",
+        "00000097",
+        "00000098"
+      ],
+      "validation": [
+        "00000002",
+        "00000005",
+        "00000010",
+        "00000013",
+        "00000018",
+        "00000021",
+        "00000025",
+        "00000028",
+        "00000032",
+        "00000035",
+        "00000038",
+        "00000042",
+        "00000045",
+        "00000048",
+        "00000053",
+        "00000057",
+        "00000061",
+        "00000064",
+        "00000069",
+        "00000072",
+        "00000078",
+        "00000081",
+        "00000084",
+        "00000088",
+        "00000092",
+        "00000096",
+        "00000099"
+      ]
+    },
+    {
+      "fit": [
+        "00000002",
+        "00000003",
+        "00000005",
+        "00000006",
+        "00000010",
+        "00000011",
+        "00000013",
+        "00000014",
+        "00000018",
+        "00000019",
+        "00000021",
+        "00000022",
+        "00000025",
+        "00000026",
+        "00000028",
+        "00000029",
+        "00000032",
+        "00000033",
+        "00000035",
+        "00000036",
+        "00000038",
+        "00000039",
+        "00000042",
+        "00000043",
+        "00000045",
+        "00000046",
+        "00000048",
+        "00000050",
+        "00000053",
+        "00000054",
+        "00000057",
+        "00000058",
+        "00000061",
+        "00000062",
+        "00000064",
+        "00000066",
+        "00000069",
+        "00000070",
+        "00000072",
+        "00000074",
+        "00000078",
+        "00000079",
+        "00000081",
+        "00000082",
+        "00000084",
+        "00000085",
+        "00000088",
+        "00000089",
+        "00000092",
+        "00000093",
+        "00000096",
+        "00000097",
+        "00000099"
+      ],
+      "validation": [
+        "00000001",
+        "00000004",
+        "00000008",
+        "00000012",
+        "00000016",
+        "00000020",
+        "00000024",
+        "00000027",
+        "00000031",
+        "00000034",
+        "00000037",
+        "00000041",
+        "00000044",
+        "00000047",
+        "00000051",
+        "00000055",
+        "00000060",
+        "00000063",
+        "00000068",
+        "00000071",
+        "00000075",
+        "00000080",
+        "00000083",
+        "00000086",
+        "00000090",
+        "00000095",
+        "00000098"
+      ]
+    },
+    {
+      "fit": [
+        "00000001",
+        "00000002",
+        "00000004",
+        "00000005",
+        "00000008",
+        "00000010",
+        "00000012",
+        "00000013",
+        "00000016",
+        "00000018",
+        "00000020",
+        "00000021",
+        "00000024",
+        "00000025",
+        "00000027",
+        "00000028",
+        "00000031",
+        "00000032",
+        "00000034",
+        "00000035",
+        "00000037",
+        "00000038",
+        "00000041",
+        "00000042",
+        "00000044",
+        "00000045",
+        "00000047",
+        "00000048",
+        "00000051",
+        "00000053",
+        "00000055",
+        "00000057",
+        "00000060",
+        "00000061",
+        "00000063",
+        "00000064",
+        "00000068",
+        "00000069",
+        "00000071",
+        "00000072",
+        "00000075",
+        "00000078",
+        "00000080",
+        "00000081",
+        "00000083",
+        "00000084",
+        "00000086",
+        "00000088",
+        "00000090",
+        "00000092",
+        "00000095",
+        "00000096",
+        "00000098",
+        "00000099"
+      ],
+      "validation": [
+        "00000003",
+        "00000006",
+        "00000011",
+        "00000014",
+        "00000019",
+        "00000022",
+        "00000026",
+        "00000029",
+        "00000033",
+        "00000036",
+        "00000039",
+        "00000043",
+        "00000046",
+        "00000050",
+        "00000054",
+        "00000058",
+        "00000062",
+        "00000066",
+        "00000070",
+        "00000074",
+        "00000079",
+        "00000082",
+        "00000085",
+        "00000089",
+        "00000093",
+        "00000097"
+      ]
+    }
+  ],
+  "train_counts": [
+    {
+      "trip": "00000001",
+      "observations": 1315,
+      "nodes": 88809,
+      "arcs": 165790,
+      "reference_entries": 525
+    },
+    {
+      "trip": "00000002",
+      "observations": 7243,
+      "nodes": 7936,
+      "arcs": 16139,
+      "reference_entries": 262
+    },
+    {
+      "trip": "00000003",
+      "observations": 821,
+      "nodes": 9138,
+      "arcs": 18028,
+      "reference_entries": 79
+    },
+    {
+      "trip": "00000004",
+      "observations": 1064,
+      "nodes": 7350,
+      "arcs": 15499,
+      "reference_entries": 320
+    },
+    {
+      "trip": "00000005",
+      "observations": 1045,
+      "nodes": 898,
+      "arcs": 1579,
+      "reference_entries": 105
+    },
+    {
+      "trip": "00000006",
+      "observations": 1450,
+      "nodes": 3259,
+      "arcs": 6757,
+      "reference_entries": 261
+    },
+    {
+      "trip": "00000008",
+      "observations": 3093,
+      "nodes": 4995,
+      "arcs": 10421,
+      "reference_entries": 173
+    },
+    {
+      "trip": "00000010",
+      "observations": 2711,
+      "nodes": 8502,
+      "arcs": 15715,
+      "reference_entries": 210
+    },
+    {
+      "trip": "00000011",
+      "observations": 2828,
+      "nodes": 2649,
+      "arcs": 5393,
+      "reference_entries": 565
+    },
+    {
+      "trip": "00000012",
+      "observations": 1608,
+      "nodes": 16376,
+      "arcs": 38599,
+      "reference_entries": 205
+    },
+    {
+      "trip": "00000013",
+      "observations": 2580,
+      "nodes": 155003,
+      "arcs": 307392,
+      "reference_entries": 788
+    },
+    {
+      "trip": "00000014",
+      "observations": 448,
+      "nodes": 4067,
+      "arcs": 8288,
+      "reference_entries": 164
+    },
+    {
+      "trip": "00000016",
+      "observations": 1305,
+      "nodes": 8205,
+      "arcs": 15098,
+      "reference_entries": 204
+    },
+    {
+      "trip": "00000018",
+      "observations": 379,
+      "nodes": 5980,
+      "arcs": 11545,
+      "reference_entries": 166
+    },
+    {
+      "trip": "00000019",
+      "observations": 2354,
+      "nodes": 52694,
+      "arcs": 108517,
+      "reference_entries": 545
+    },
+    {
+      "trip": "00000020",
+      "observations": 2353,
+      "nodes": 2739,
+      "arcs": 5958,
+      "reference_entries": 142
+    },
+    {
+      "trip": "00000021",
+      "observations": 15783,
+      "nodes": 732,
+      "arcs": 1510,
+      "reference_entries": 277
+    },
+    {
+      "trip": "00000022",
+      "observations": 474,
+      "nodes": 9607,
+      "arcs": 18982,
+      "reference_entries": 376
+    },
+    {
+      "trip": "00000024",
+      "observations": 801,
+      "nodes": 25782,
+      "arcs": 51609,
+      "reference_entries": 249
+    },
+    {
+      "trip": "00000025",
+      "observations": 1179,
+      "nodes": 38035,
+      "arcs": 85639,
+      "reference_entries": 283
+    },
+    {
+      "trip": "00000026",
+      "observations": 361,
+      "nodes": 2580,
+      "arcs": 5043,
+      "reference_entries": 197
+    },
+    {
+      "trip": "00000027",
+      "observations": 694,
+      "nodes": 2756,
+      "arcs": 5588,
+      "reference_entries": 138
+    },
+    {
+      "trip": "00000028",
+      "observations": 3565,
+      "nodes": 60628,
+      "arcs": 127216,
+      "reference_entries": 618
+    },
+    {
+      "trip": "00000029",
+      "observations": 733,
+      "nodes": 10825,
+      "arcs": 20868,
+      "reference_entries": 204
+    },
+    {
+      "trip": "00000031",
+      "observations": 4245,
+      "nodes": 59059,
+      "arcs": 125831,
+      "reference_entries": 432
+    },
+    {
+      "trip": "00000032",
+      "observations": 2464,
+      "nodes": 124540,
+      "arcs": 259437,
+      "reference_entries": 819
+    },
+    {
+      "trip": "00000033",
+      "observations": 5844,
+      "nodes": 3340,
+      "arcs": 6360,
+      "reference_entries": 169
+    },
+    {
+      "trip": "00000034",
+      "observations": 3614,
+      "nodes": 19597,
+      "arcs": 40971,
+      "reference_entries": 454
+    },
+    {
+      "trip": "00000035",
+      "observations": 1643,
+      "nodes": 21126,
+      "arcs": 35212,
+      "reference_entries": 403
+    },
+    {
+      "trip": "00000036",
+      "observations": 1368,
+      "nodes": 4528,
+      "arcs": 9619,
+      "reference_entries": 156
+    },
+    {
+      "trip": "00000037",
+      "observations": 677,
+      "nodes": 9472,
+      "arcs": 21744,
+      "reference_entries": 163
+    },
+    {
+      "trip": "00000038",
+      "observations": 1287,
+      "nodes": 21046,
+      "arcs": 42026,
+      "reference_entries": 221
+    },
+    {
+      "trip": "00000039",
+      "observations": 363,
+      "nodes": 1185,
+      "arcs": 2388,
+      "reference_entries": 161
+    },
+    {
+      "trip": "00000041",
+      "observations": 1019,
+      "nodes": 7837,
+      "arcs": 14317,
+      "reference_entries": 340
+    },
+    {
+      "trip": "00000042",
+      "observations": 7739,
+      "nodes": 49376,
+      "arcs": 101128,
+      "reference_entries": 1440
+    },
+    {
+      "trip": "00000043",
+      "observations": 2322,
+      "nodes": 109070,
+      "arcs": 215620,
+      "reference_entries": 427
+    },
+    {
+      "trip": "00000044",
+      "observations": 546,
+      "nodes": 4386,
+      "arcs": 9209,
+      "reference_entries": 130
+    },
+    {
+      "trip": "00000045",
+      "observations": 640,
+      "nodes": 2034,
+      "arcs": 4335,
+      "reference_entries": 59
+    },
+    {
+      "trip": "00000046",
+      "observations": 1401,
+      "nodes": 299,
+      "arcs": 649,
+      "reference_entries": 66
+    },
+    {
+      "trip": "00000047",
+      "observations": 1272,
+      "nodes": 18388,
+      "arcs": 39747,
+      "reference_entries": 188
+    },
+    {
+      "trip": "00000048",
+      "observations": 1240,
+      "nodes": 1308,
+      "arcs": 2592,
+      "reference_entries": 149
+    },
+    {
+      "trip": "00000050",
+      "observations": 518,
+      "nodes": 2206,
+      "arcs": 4576,
+      "reference_entries": 94
+    },
+    {
+      "trip": "00000051",
+      "observations": 984,
+      "nodes": 4181,
+      "arcs": 8494,
+      "reference_entries": 299
+    },
+    {
+      "trip": "00000053",
+      "observations": 1304,
+      "nodes": 77905,
+      "arcs": 148707,
+      "reference_entries": 754
+    },
+    {
+      "trip": "00000054",
+      "observations": 19313,
+      "nodes": 63822,
+      "arcs": 116916,
+      "reference_entries": 422
+    },
+    {
+      "trip": "00000055",
+      "observations": 2472,
+      "nodes": 98511,
+      "arcs": 198961,
+      "reference_entries": 475
+    },
+    {
+      "trip": "00000057",
+      "observations": 1645,
+      "nodes": 8929,
+      "arcs": 18777,
+      "reference_entries": 300
+    },
+    {
+      "trip": "00000058",
+      "observations": 599,
+      "nodes": 22367,
+      "arcs": 39383,
+      "reference_entries": 345
+    },
+    {
+      "trip": "00000060",
+      "observations": 854,
+      "nodes": 15128,
+      "arcs": 30077,
+      "reference_entries": 520
+    },
+    {
+      "trip": "00000061",
+      "observations": 1430,
+      "nodes": 4947,
+      "arcs": 10339,
+      "reference_entries": 296
+    },
+    {
+      "trip": "00000062",
+      "observations": 3378,
+      "nodes": 30613,
+      "arcs": 62836,
+      "reference_entries": 497
+    },
+    {
+      "trip": "00000063",
+      "observations": 2781,
+      "nodes": 2617,
+      "arcs": 5553,
+      "reference_entries": 565
+    },
+    {
+      "trip": "00000064",
+      "observations": 2093,
+      "nodes": 28258,
+      "arcs": 56986,
+      "reference_entries": 692
+    },
+    {
+      "trip": "00000066",
+      "observations": 4325,
+      "nodes": 9609,
+      "arcs": 20071,
+      "reference_entries": 365
+    },
+    {
+      "trip": "00000068",
+      "observations": 747,
+      "nodes": 3537,
+      "arcs": 7058,
+      "reference_entries": 240
+    },
+    {
+      "trip": "00000069",
+      "observations": 2067,
+      "nodes": 8556,
+      "arcs": 17193,
+      "reference_entries": 467
+    },
+    {
+      "trip": "00000070",
+      "observations": 2076,
+      "nodes": 1799,
+      "arcs": 3776,
+      "reference_entries": 149
+    },
+    {
+      "trip": "00000071",
+      "observations": 850,
+      "nodes": 6265,
+      "arcs": 14868,
+      "reference_entries": 186
+    },
+    {
+      "trip": "00000072",
+      "observations": 969,
+      "nodes": 3275,
+      "arcs": 7063,
+      "reference_entries": 131
+    },
+    {
+      "trip": "00000074",
+      "observations": 1929,
+      "nodes": 34654,
+      "arcs": 61055,
+      "reference_entries": 305
+    },
+    {
+      "trip": "00000075",
+      "observations": 1628,
+      "nodes": 1022,
+      "arcs": 2124,
+      "reference_entries": 108
+    },
+    {
+      "trip": "00000078",
+      "observations": 2909,
+      "nodes": 75230,
+      "arcs": 151458,
+      "reference_entries": 1765
+    },
+    {
+      "trip": "00000079",
+      "observations": 689,
+      "nodes": 39031,
+      "arcs": 72116,
+      "reference_entries": 182
+    },
+    {
+      "trip": "00000080",
+      "observations": 2510,
+      "nodes": 10014,
+      "arcs": 18746,
+      "reference_entries": 139
+    },
+    {
+      "trip": "00000081",
+      "observations": 3224,
+      "nodes": 2791,
+      "arcs": 5048,
+      "reference_entries": 778
+    },
+    {
+      "trip": "00000082",
+      "observations": 4268,
+      "nodes": 15696,
+      "arcs": 31754,
+      "reference_entries": 204
+    },
+    {
+      "trip": "00000083",
+      "observations": 1507,
+      "nodes": 12907,
+      "arcs": 25393,
+      "reference_entries": 143
+    },
+    {
+      "trip": "00000084",
+      "observations": 16031,
+      "nodes": 24898,
+      "arcs": 50888,
+      "reference_entries": 627
+    },
+    {
+      "trip": "00000085",
+      "observations": 1092,
+      "nodes": 690,
+      "arcs": 1554,
+      "reference_entries": 170
+    },
+    {
+      "trip": "00000086",
+      "observations": 4143,
+      "nodes": 114868,
+      "arcs": 237656,
+      "reference_entries": 671
+    },
+    {
+      "trip": "00000088",
+      "observations": 876,
+      "nodes": 11373,
+      "arcs": 24376,
+      "reference_entries": 163
+    },
+    {
+      "trip": "00000089",
+      "observations": 1228,
+      "nodes": 15972,
+      "arcs": 32823,
+      "reference_entries": 265
+    },
+    {
+      "trip": "00000090",
+      "observations": 536,
+      "nodes": 4010,
+      "arcs": 7942,
+      "reference_entries": 235
+    },
+    {
+      "trip": "00000092",
+      "observations": 7892,
+      "nodes": 26468,
+      "arcs": 53348,
+      "reference_entries": 2266
+    },
+    {
+      "trip": "00000093",
+      "observations": 1211,
+      "nodes": 45161,
+      "arcs": 85122,
+      "reference_entries": 590
+    },
+    {
+      "trip": "00000095",
+      "observations": 1551,
+      "nodes": 1888,
+      "arcs": 3723,
+      "reference_entries": 306
+    },
+    {
+      "trip": "00000096",
+      "observations": 3271,
+      "nodes": 16893,
+      "arcs": 32276,
+      "reference_entries": 456
+    },
+    {
+      "trip": "00000097",
+      "observations": 1740,
+      "nodes": 23566,
+      "arcs": 48503,
+      "reference_entries": 444
+    },
+    {
+      "trip": "00000098",
+      "observations": 5584,
+      "nodes": 43440,
+      "arcs": 88137,
+      "reference_entries": 1003
+    },
+    {
+      "trip": "00000099",
+      "observations": 2322,
+      "nodes": 34252,
+      "arcs": 72870,
+      "reference_entries": 886
+    }
+  ],
+  "evaluator_folder_present": false,
+  "evaluator_accessed": false
+}
