@@ -1,0 +1,47 @@
+{
+  "trips": [
+    {
+      "trip": "00000000",
+      "status": "Completed trip 00000000.\n2 sequence resets across gaps or invalid transitions.",
+      "observations": "2,503",
+      "leaflet_paths": 465,
+      "legend": true,
+      "map_bounds_available": true,
+      "actual_bounds_contain_gps": true,
+      "loaded_basemap_tiles": 20
+    },
+    {
+      "trip": "00000007",
+      "status": "Completed trip 00000007.\n0 sequence resets across gaps or invalid transitions.",
+      "observations": "1,354",
+      "leaflet_paths": 395,
+      "legend": true,
+      "map_bounds_available": true,
+      "actual_bounds_contain_gps": true,
+      "loaded_basemap_tiles": 15
+    }
+  ],
+  "error_state_verified": true,
+  "screenshots": [
+    "results/final_verification/ui_00000000.png",
+    "results/final_verification/map_00000000.png",
+    "results/final_verification/ui_00000007.png",
+    "results/final_verification/map_00000007.png",
+    "results/final_verification/mobile_ui.png"
+  ],
+  "mobile_no_horizontal_overflow": true,
+  "ui": "http://127.0.0.1:8080",
+  "api": "http://127.0.0.1:8000",
+  "real_browser": true,
+  "mocked_api": false,
+  "actual_prediction_requests": [
+    {
+      "url": "http://127.0.0.1:8000/predict/00000000",
+      "method": "POST"
+    },
+    {
+      "url": "http://127.0.0.1:8000/predict/00000007",
+      "method": "POST"
+    }
+  ]
+}

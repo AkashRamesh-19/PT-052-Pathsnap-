@@ -1,0 +1,30 @@
+C:\Users\aswin\AppData\Roaming\Python\Python312\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_fractional_and_multicolumn_reference_rejected (test_alignment.AlignmentTests.test_fractional_and_multicolumn_reference_rejected) ... ok
+test_reference_direction_uses_sequence (test_alignment.AlignmentTests.test_reference_direction_uses_sequence) ... ok
+test_repeated_arcs_keep_occurrence_order (test_alignment.AlignmentTests.test_repeated_arcs_keep_occurrence_order) ... ok
+test_candidates_agree_with_brute_force (test_data_features.DataFeatureTests.test_candidates_agree_with_brute_force) ... ok
+test_features_preserve_projection_and_motion (test_data_features.DataFeatureTests.test_features_preserve_projection_and_motion) ... ok
+test_legacy_schema_selection_and_unknown_names (test_data_features.DataFeatureTests.test_legacy_schema_selection_and_unknown_names) ... ok
+test_loader_ignores_labels_and_rejects_bad_timestamps (test_data_features.DataFeatureTests.test_loader_ignores_labels_and_rejects_bad_timestamps) ... ok
+test_motion_context_and_endpoint_geometry (test_data_features.DataFeatureTests.test_motion_context_and_endpoint_geometry) ... ok
+test_stationary_zero_length_and_gap_reset (test_data_features.DataFeatureTests.test_stationary_zero_length_and_gap_reset) ... ok
+test_evaluator_inference_does_not_read_labels_even_if_scoring_requested (test_integration_schema.InferenceIsolationTests.test_evaluator_inference_does_not_read_labels_even_if_scoring_requested) ... ok
+test_fractional_arc_index_is_not_silently_truncated (test_integration_schema.InferenceIsolationTests.test_fractional_arc_index_is_not_silently_truncated) ... ok
+test_health_validates_schema_hash_not_just_file_presence (test_integration_schema.InferenceIsolationTests.test_health_validates_schema_hash_not_just_file_presence) ... ok
+test_api_map_has_geometry_without_reference_layer (test_pipeline.PipelineTests.test_api_map_has_geometry_without_reference_layer) ... ok
+test_api_partition_and_unknown_trip (test_pipeline.PipelineTests.test_api_partition_and_unknown_trip) ... ok
+test_directed_decoder_prefers_reachable_path (test_pipeline.PipelineTests.test_directed_decoder_prefers_reachable_path) ... ok
+test_disconnected_candidates_report_reset (test_pipeline.PipelineTests.test_disconnected_candidates_report_reset) ... ok
+test_exact_candidates_match_bruteforce (test_pipeline.PipelineTests.test_exact_candidates_match_bruteforce) ... ok
+test_inference_loader_does_not_open_reference (test_pipeline.PipelineTests.test_inference_loader_does_not_open_reference) ... ok
+test_disconnected_segments_never_get_an_invented_connector (test_reconstruct.ReconstructionTests.test_disconnected_segments_never_get_an_invented_connector) ... ok
+test_missing_intermediate_arc_is_reconstructed (test_reconstruct.ReconstructionTests.test_missing_intermediate_arc_is_reconstructed) ... ok
+test_candidate_misses_remain_in_accuracy_denominator (test_training_policy.TrainingPolicyTests.test_candidate_misses_remain_in_accuracy_denominator) ... ok
+test_histogram_boosting_cannot_randomly_split_candidate_rows (test_training_policy.TrainingPolicyTests.test_histogram_boosting_cannot_randomly_split_candidate_rows) ... ok
+test_primary_accuracy_does_not_reward_predicting_only_negative_candidates (test_training_policy.TrainingPolicyTests.test_primary_accuracy_does_not_reward_predicting_only_negative_candidates) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.554s
+
+OK

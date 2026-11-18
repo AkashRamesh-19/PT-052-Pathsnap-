@@ -1,0 +1,32 @@
+INFO:     prediction partition=student_test trip=00000000 observations=2503 seconds=8.724 resets=2 metrics={'proxy_pointwise_accuracy': 0.951658010387535, 'alignment_confident_coverage': 0.9464642429085098, 'label_method': 'ordered-reference alignment proxy, not verified ground truth'}
+INFO:     127.0.0.1:61445 - "POST /predict/00000000 HTTP/1.1" 200 OK
+INFO:     prediction partition=student_test trip=00000007 observations=1354 seconds=3.406 resets=0 metrics={'proxy_pointwise_accuracy': 0.8855243722304283, 'alignment_confident_coverage': 0.9586410635155096, 'label_method': 'ordered-reference alignment proxy, not verified ground truth'}
+INFO:     127.0.0.1:61445 - "POST /predict/00000007 HTTP/1.1" 200 OK
+INFO:     prediction partition=student_test trip=00000009 observations=1049 seconds=3.858 resets=1 metrics={'proxy_pointwise_accuracy': 0.8789323164918971, 'alignment_confident_coverage': 0.6701620591039085, 'label_method': 'ordered-reference alignment proxy, not verified ground truth'}
+INFO:     127.0.0.1:61445 - "POST /predict/00000009 HTTP/1.1" 200 OK
+INFO:     prediction partition=student_test trip=00000040 observations=2995 seconds=6.894 resets=1 metrics={'proxy_pointwise_accuracy': 0.9429048414023372, 'alignment_confident_coverage': 0.9228714524207011, 'label_method': 'ordered-reference alignment proxy, not verified ground truth'}
+INFO:     127.0.0.1:61445 - "POST /predict/00000040 HTTP/1.1" 200 OK
+INFO:     prediction partition=student_test trip=00000052 observations=262 seconds=1.053 resets=0 metrics={'proxy_pointwise_accuracy': 0.9885496183206107, 'alignment_confident_coverage': 0.7977099236641222, 'label_method': 'ordered-reference alignment proxy, not verified ground truth'}
+INFO:     127.0.0.1:61445 - "POST /predict/00000052 HTTP/1.1" 200 OK
+INFO:     prediction partition=student_test trip=00000056 observations=3958 seconds=11.046 resets=2 metrics={'proxy_pointwise_accuracy': 0.9292572006063669, 'alignment_confident_coverage': 0.7589691763516928, 'label_method': 'ordered-reference alignment proxy, not verified ground truth'}
+INFO:     127.0.0.1:61445 - "POST /predict/00000056 HTTP/1.1" 200 OK
+INFO:     prediction partition=student_test trip=00000065 observations=768 seconds=2.482 resets=2 metrics={'proxy_pointwise_accuracy': 0.91796875, 'alignment_confident_coverage': 0.7708333333333334, 'label_method': 'ordered-reference alignment proxy, not verified ground truth'}
+INFO:     127.0.0.1:61445 - "POST /predict/00000065 HTTP/1.1" 200 OK
+INFO:     prediction partition=student_test trip=00000076 observations=1486 seconds=7.080 resets=9 metrics={'proxy_pointwise_accuracy': 0.9057873485868102, 'alignment_confident_coverage': 0.7180349932705249, 'label_method': 'ordered-reference alignment proxy, not verified ground truth'}
+INFO:     127.0.0.1:61445 - "POST /predict/00000076 HTTP/1.1" 200 OK
+INFO:     prediction partition=student_test trip=00000077 observations=3911 seconds=8.157 resets=0 metrics={'proxy_pointwise_accuracy': 0.7463564305804142, 'alignment_confident_coverage': 0.8079774993607773, 'label_method': 'ordered-reference alignment proxy, not verified ground truth'}
+INFO:     127.0.0.1:61445 - "POST /predict/00000077 HTTP/1.1" 200 OK
+INFO:     prediction partition=student_test trip=00000091 observations=874 seconds=3.038 resets=0 metrics={'proxy_pointwise_accuracy': 0.9130434782608695, 'alignment_confident_coverage': 0.7723112128146453, 'label_method': 'ordered-reference alignment proxy, not verified ground truth'}
+INFO:     127.0.0.1:61445 - "POST /predict/00000091 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61445 - "POST /predict/not-a-trip HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61445 - "POST /predict/99999999 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61445 - "GET /predict/00000000 HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:61445 - "OPTIONS /predict/00000000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62151 - "GET /trips HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58262 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53758 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59085 - "GET /trips HTTP/1.1" 200 OK
+INFO:     prediction partition=student_test trip=00000000 observations=2503 seconds=9.097 resets=2 metrics={'proxy_pointwise_accuracy': 0.951658010387535, 'alignment_confident_coverage': 0.9464642429085098, 'label_method': 'ordered-reference alignment proxy, not verified ground truth'}
+INFO:     127.0.0.1:62478 - "POST /predict/00000000 HTTP/1.1" 200 OK
+INFO:     prediction partition=student_test trip=00000007 observations=1354 seconds=3.309 resets=0 metrics={'proxy_pointwise_accuracy': 0.8855243722304283, 'alignment_confident_coverage': 0.9586410635155096, 'label_method': 'ordered-reference alignment proxy, not verified ground truth'}
+INFO:     127.0.0.1:57787 - "POST /predict/00000007 HTTP/1.1" 200 OK
